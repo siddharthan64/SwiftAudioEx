@@ -58,7 +58,7 @@ public class NowPlayingInfoController: NowPlayingInfoControllerProtocol {
         }
     }
    
-    private func update() {
+    public func update() {
         infoCenter.nowPlayingInfo = info
     }
     
