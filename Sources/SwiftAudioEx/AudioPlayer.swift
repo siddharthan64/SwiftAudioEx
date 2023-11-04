@@ -293,9 +293,6 @@ public class AudioPlayer: AVPlayerWrapperDelegate {
             MediaItemProperty.artist(item.getArtist()),
             MediaItemProperty.title(item.getTitle()),
             MediaItemProperty.albumTitle(item.getAlbumTitle()),
-            MediaItemProperty.duration(wrapper.duration),
-            NowPlayingInfoProperty.playbackRate(wrapper.playWhenReady ? Double(wrapper.rate) : 0),
-            NowPlayingInfoProperty.elapsedPlaybackTime(wrapper.currentTime),
         ])
         loadArtwork(forItem: item)
     }
@@ -308,7 +305,7 @@ public class AudioPlayer: AVPlayerWrapperDelegate {
      - Duration
      - Playback rate
      */
-    func updateNowPlayingPlaybackValues() {
+    public func updateNowPlayingPlaybackValues() {
         nowPlayingInfoController.set(keyValues: [
             MediaItemProperty.duration(wrapper.duration),
             NowPlayingInfoProperty.playbackRate(wrapper.playWhenReady ? Double(wrapper.rate) : 0),
