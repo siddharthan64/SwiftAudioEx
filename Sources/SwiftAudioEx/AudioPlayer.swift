@@ -293,6 +293,9 @@ public class AudioPlayer: AVPlayerWrapperDelegate {
             MediaItemProperty.artist(item.getArtist()),
             MediaItemProperty.title(item.getTitle()),
             MediaItemProperty.albumTitle(item.getAlbumTitle()),
+            MediaItemProperty.duration(wrapper.duration),
+            NowPlayingInfoProperty.playbackRate(wrapper.playWhenReady ? Double(wrapper.rate) : 0),
+            NowPlayingInfoProperty.elapsedPlaybackTime(wrapper.currentTime),
         ])
         loadArtwork(forItem: item)
     }
